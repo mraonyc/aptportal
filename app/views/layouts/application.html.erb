@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aptportal</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="nav">
+<%= show_login(@auth_user) %>
+<%= link_to 'Apartments', apartments_path %>
+<%= link_to 'People', people_path %>
+<%= link_to 'Issues', issues_path %>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

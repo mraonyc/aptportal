@@ -1,0 +1,64 @@
+<%= form_for(@apartment) do |f| %>
+  <% if @apartment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@apartment.errors.count, "error") %> prohibited this apartment from being saved:</h2>
+
+      <ul>
+      <% @apartment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo %>
+    Link to image of apartment
+    <%= f.text_field :remote_photo_url %>
+  </div>
+  <div class="field">
+    <%= f.label :lease %><br />
+    <%= f.file_field :lease %>
+  </div>
+  <div class="field">
+    <%= f.label :rent %><br />
+    <%= f.number_field :rent %>
+  </div>
+  <div class="field">
+    <%= f.label :rooms %><br />
+    <%= f.number_field :rooms %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br />
+    <%= f.number_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :lease_expiration %><br />
+    <%= f.date_select :lease_expiration %>
+  </div>
+
+ <div class="field">
+ 	<b> Tenant: </b>
+    <% Person.where("role = ?", "Tenant").each do |person| %>
+    <%=person.name%>
+    <%= check_box_tag 'apartment[person_ids]{}', person.id, @apartment.people.include?(person)%>
+    <%end%>
+ </div>
+
+<div class="field">
+ 	<b>Landlord: </b>
+    <% Person.where("role = ?", "Landlord").each do |person| %>
+    <%=person.name%>
+    <%= check_box_tag 'apartment[person_ids]{}', person.id, @apartment.people.include?(person)%>
+    <%end%>
+ </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
