@@ -1,17 +1,29 @@
 <h1>Issues</h1>
 
-<% @issues.each do |issue| %>
 
+
+
+<div class="issues">
 <table> 
+ <b><tr>
+ 	<td>Apartment</td>
+ 	<td>Issue</td>
+ 	<td>Category</td>
+ 	<td>Date of Issue</td>
+ 	<td>Resolved?</td>
+ </b></tr>
+<% @issues.each do |issue| %>
  <tr>	
-    <td><%= link_to issue.name, issue %></td>
     <td><%= issue.apartment.name %></td>
+    <td><%= link_to issue.name, issue %></td>
     
     <td><%= issue.category %></td>
     <td><%= issue.issue_date %></td>
+    <td><%= issue.is_resolved ? 'Resolved' : 'Open' %></td>
   </tr>
 <% end %>
 </table>
+</div>
 
 <br />
 <div class="clear">

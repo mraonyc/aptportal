@@ -30,6 +30,10 @@ h2 {
 	padding: 0px 5px;
 }
 
+.issues td {
+	padding: 10px;
+}
+
 .navbar li {
 	font: 12px 'Trebuchet MS', sans-serif; 
 	color: white;
