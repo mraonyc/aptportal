@@ -8,14 +8,35 @@
 </head>
 <body>
 
-<div class="nav">
-<%= show_login(@auth_user) %>
-<%= link_to 'Apartments', apartments_path %>
-<%= link_to 'People', people_path %>
-<%= link_to 'Issues', issues_path %>
-</div>
 
-<%= yield %>
+<div class="container">
+	<div class="row">
+		<div class="span12">
+          <div class="navbar">
+              
+               <a class="brand" href="<%= apartments_path %>">AptPortal</a>
+               <ul class="nav">
+                 <li> <%= show_login(@auth_user) %> </li>
+                 <%= create_navlink('Apartments', apartments_path) %>
+                 <%= create_navlink('People', people_path) %>
+                 <%= create_navlink('Issues', issues_path) %> 
+                 
+
+                </ul>
+           
+               
+             </div>
+          </div>
+    </div>
+    
+        <div class="row">
+                <div class="span12">
+                <%= yield %>
+            </div>
+        </div>
+
+        
+        </div>
 
 </body>
 </html>

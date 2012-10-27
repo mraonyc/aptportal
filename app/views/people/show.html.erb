@@ -1,21 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @person.name %>
-</p>
 
-<p>
-  <b>Role:</b>
+<h2> Name: <%= @person.name %> </h2>
+
+Role:
   <%= @person.role %>
-</p>
 
-<p>
-  <b>Email:</b>
+Email:
   <%= @person.email %>
-</p>
 
 
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>
+<%= link_to 'Destroy', @person, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -1,6 +1,8 @@
 Aptportal::Application.routes.draw do
   match '/login' => 'session#new', :via => :get
   match '/login' => 'session#login', :via => :post
+  match '/logout' => 'session#destroy', :via => :get
+  
   resources :issues
 
   resources :people

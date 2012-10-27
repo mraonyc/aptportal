@@ -1,40 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @apartment.name %>
-</p>
+  <h1><%= @apartment.name %></h1>
+<div class="listing">
+  <%= image_tag(@apartment.photo) %>
 
-<p>
-  <b>Photo:</b>
-  <%= @apartment.photo %>
-</p>
+<div class="listing-description">
+  <li> Rent: <%= number_to_currency(@apartment.rent) %></li>
+  
+  <li>Rooms: <%= @apartment.rooms %></li>
+  
+  <li>Square Feet: <%= @apartment.area %></li>
+  
+  <li>Lease expiration: <%= @apartment.lease_expiration %></li>
+  <li><a href="<%= @apartment.lease %>">View Lease</a></li>
 
-<p>
-  <b>Lease:</b>
-  <%= @apartment.lease %>
-</p>
+  <li>People: <%= @apartment.people.name %></li>
 
-<p>
-  <b>Rent:</b>
-  <%= @apartment.rent %>
-</p>
-
-<p>
-  <b>Rooms:</b>
-  <%= @apartment.rooms %>
-</p>
-
-<p>
-  <b>Area:</b>
-  <%= @apartment.area %>
-</p>
-
-<p>
-  <b>Lease expiration:</b>
-  <%= @apartment.lease_expiration %>
-</p>
+  <li>Issue: <%= @apartment.issues.name %></li>
 
 
+</div>
+
+
+
+<div class="clear">
 <%= link_to 'Edit', edit_apartment_path(@apartment) %> |
-<%= link_to 'Back', apartments_path %>
+<%= link_to 'View All Apartments', apartments_path %> |
+<%= link_to 'Delete This Listing', @apartment, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+</div>

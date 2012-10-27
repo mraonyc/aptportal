@@ -15,6 +15,13 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+  
+  <div class="field">
+    <%= f.label :apartment_id %><br />
+    <%= f.select :apartment_id, Apartment.all.map{|a|[a.name, a.id]}, {:prompt =>"Apartment"} %>
+ </div>
+
+  
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
@@ -31,6 +38,8 @@
     <%= f.label :is_resolved %><br />
     <%= f.check_box :is_resolved %>
   </div>
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>

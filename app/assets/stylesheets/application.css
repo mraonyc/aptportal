@@ -12,3 +12,90 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+	font: 12px 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+	font: 16px 'Trebuchet MS';
+	margin: 5px;
+	padding: 5px;
+	border-bottom: gray 1px solid;
+}
+
+h2 {
+	font: 14px 'Trebuchet MS', sans-serif;
+	margin: 0px;
+	padding: 0px 5px;
+}
+
+.navbar li {
+	font: 12px 'Trebuchet MS', sans-serif; 
+	color: white;
+	text-align: bottom;
+	padding: 5px;
+	margin: 5px;
+}
+
+.navbar {
+	background: black;
+	color: white;
+	font: 12px 'Trebuchet MS', sans-serif;
+	text-transform: lowercase;
+	text-shadow: none;
+}
+
+.brand {
+	padding: 5px;
+	margin: 5px;
+	text-transform: none;
+	color: white;
+	font: 14px "Trebuchet MS", sans-serif;
+}
+
+.thumbnail {
+	height: auto;
+	width: 175px;
+	float: left;
+	margin: 5px;
+}
+
+.thumbnail img {
+	height: 150px;
+	width: 150px;
+	border: 1px gray;
+	padding: 5px;
+	margin: 5px;
+	display: block;
+}
+
+.thumbnail li {
+	list-style-type: none;
+	padding: 0px 10px;
+	font: bold 12px "Trebuchet MS";
+}
+
+.clear {
+	clear: both;
+}
+
+.listing img {
+	height: 300px;
+	width: 300px;
+	border: 1px black;
+	padding: 5px;
+	float: left;
+	margin: 5px;
+}
+
+.listing-description {
+	float: left;
+	
+}
+
+.person-listing {
+	height: 150px;
+	width: 150px;
+	float: left;
+}

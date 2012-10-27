@@ -1,28 +1,19 @@
-<h1>Listing people</h1>
+<h1>Tenants / Landlords</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Role</th>
-    <th>Email</th>
-    <th>Password digest</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @people.each do |person| %>
-  <tr>
-    <td><%= person.name %></td>
-    <td><%= person.role %></td>
-    <td><%= person.email %></td>
-    <td><%= link_to 'Show', person %></td>
-    <td><%= link_to 'Edit', edit_person_path(person) %></td>
-    <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="person-listing">
+    <h2><%= link_to person.name, person %></h2>
+    <li><%= person.role %></li>
+    <li><%= person.email %></li>
+    
+
+    
+</div>
+  
 <% end %>
-</table>
 
-<br />
 
+<div class="clear">
 <%= link_to 'New Person', new_person_path %>
+</div>
