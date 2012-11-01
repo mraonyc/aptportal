@@ -14,9 +14,16 @@
   <li>Lease expiration: <%= @apartment.lease_expiration %></li>
   <li><a href="<%= @apartment.lease %>">View Lease</a></li>
 
-  <li>People: <%= @apartment.people.name %></li>
+  <li>People: <% @apartment.people.each do |person| %>
+  	<%=person.name%>
+  	<%end%>
+  </li>
+  
 
-  <li>Issue(s): <%= @apartment.issues.name %></li>
+  <li>Issue(s): <% @apartment.issues.each do |issue| %>
+  	<%= issue.name%>
+  	<%end%>
+  </li>
 
 
 </div>

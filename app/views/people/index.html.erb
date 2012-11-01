@@ -6,8 +6,10 @@
     <h2><%= link_to person.name, person %></h2>
     <li><%= person.role %></li>
     <li><%= person.email %></li>
-    
-
+<li><% person.apartments.each do |apartment|%>
+	<%= link_to apartment.name, apartment %>
+	<%end%>
+	</li>
     
 </div>
   

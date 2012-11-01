@@ -46,7 +46,7 @@
  	<b> Tenant: </b>
     <% Person.where("role = ?", "Tenant").each do |person| %>
     <%=person.name%>
-    <%= check_box_tag 'apartment[person_ids]{}', person.id, @apartment.people.include?(person)%>
+    <%= check_box_tag 'apartment[person_ids][]', person.id, @apartment.people.include?(person)%>
     <%end%>
  </div>
 
@@ -54,7 +54,7 @@
  	<b>Landlord: </b>
     <% Person.where("role = ?", "Landlord").each do |person| %>
     <%=person.name%>
-    <%= check_box_tag 'apartment[person_ids]{}', person.id, @apartment.people.include?(person)%>
+    <%= check_box_tag 'apartment[person_ids][]', person.id, @apartment.people.include?(person)%>
     <%end%>
  </div>
 
